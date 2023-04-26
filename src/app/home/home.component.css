@@ -1,0 +1,32 @@
+.carousel-inner{
+    height: 500px;
+}
+
+.item, img{
+    height: 100% !important;
+    width:  100% !important;
+    /* border: 1px solid red; */
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    overflow: hidden;
+  }
+  
+  /* .card:hover {
+    
+    transform: scale(1.05);
+    overflow: hidden;
+  } */
+  
+  .card-img-top {
+    transition: transform 0.2s;
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.1);
+  }
+  
+  
+  

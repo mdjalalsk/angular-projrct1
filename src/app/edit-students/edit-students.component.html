@@ -1,0 +1,70 @@
+<!-- <p>edit-students works!</p> -->
+<!-- <p>add-students works!</p> -->
+<div class="container">
+    <div>
+        <h1 class="text-center">Edit Student</h1>
+    </div>
+    <div style="width: 50%;margin: auto;">
+        <form [formGroup]="addForm" novalidate class="form">
+            <input type="hidden" name="id" formControlName="id">
+            <div class="row">
+                <div class="col-md-6">First Name</div>
+                <div class="col-md-6"><input type="text" class="form-control" name="first_name"
+                        formControlName="first_name"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">Last Name</div>
+                <div class="col-md-6"><input type="text" class="form-control" name="last_name"
+                        formControlName="last_name"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">Email</div>
+                <div class="col-md-6"><input type="text" class="form-control" name="email" formControlName="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">Password</div>
+                <div class="col-md-6"><input type="text" class="form-control" name="password"
+                        formControlName="password"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">Gender</div>
+                <div class="col-md-6">
+                    Male: <input type="radio" formControlName="gender" name="gender" value="male">
+                    female: <input type="radio" formControlName="gender" name="gender" value="female">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">Hobbies</div>
+                <div class="col-md-6">
+                    <div *ngFor="let result of hobbyArray">
+                        <input type="checkbox" [ngModel]="result.value"
+                            (ngModelChange)="result.value=$event;addForm.get('hobbyField').setValue(parse())" 
+                            [ngModelOptions]="{standalone:true}"
+                            >{{result.name}}
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">Country</div>
+                <div class="col-md-6">
+                    <select name="country" formControlName="country" class="form-control">
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Srelanka">Srelanka</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-success mb-3" (click)="onedit()">EDIT STUDENT</button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>
